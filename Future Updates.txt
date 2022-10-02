@@ -1,0 +1,3 @@
+Major things to add:
+Change the overall aesthetic
+Add an AI computer to play 1v1

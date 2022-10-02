@@ -70,26 +70,26 @@ time, mark, audio, video {
     cursor: pointer;
 }
 #gameboard{
-    background-color: rgba(0,0,0,1);
     width: 620px;
     height: 620px;
     position: relative;
     top: 10px;
-    /*box-shadow: 0px 0px 50px 0px white;*/
 }
-#border{
+#gameContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+    
+}
+.pieceCon{
+    width: 200px;
+    height: 200px;
 }
 .marker{
-    background-color: white;
     height: 200px;
     width: 200px;
-}
-.empty:hover{
+    filter: brightness(0%);
     cursor: pointer;
-    filter: brightness(90%);
 }
 .highlighter{
     background-color: rgba(255,255,255,1);
@@ -101,4 +101,39 @@ time, mark, audio, video {
 }
 .circles{
     background: linear-gradient(215deg,#F76E11, #FF9F45, #FFBC80);
+}
+hr{
+    display: block;
+    position: absolute;
+    top:-30px;
+    width: 5px;
+    height: 630px;
+    background-color: black;
+    border: 0px solid black;
+}
+#firstVertical{
+    left: 202px;
+}
+#secondVertical{
+    left: 413px;
+}
+#firstHorizontal{
+    top: -135px;
+    left: 300px;
+    transform: rotate(90deg);
+}
+#secondHorizontal{
+    top: 75px;
+    left: 300px;
+    transform: rotate(90deg);
+}
+#playerCount{
+    display: block;
+    position: absolute;
+    z-index: 0;
+}
+#markerOption{
+    display: block;
+    position: absolute;
+    z-index: 1;
 }

@@ -5,43 +5,54 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tic Tac Toe</title>
-        <link rel="stylesheet" href="/stylesheet.css">
-        <script src="game.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="game.js" defer></script>
     </head>
     <body>
-        <form id="playerCount"></form>
-        <form id="markerOption"></form>
+        <div id="playerCount">
+            <form>
+                <button type="button" id="singlePlayer">Single player</button>
+                <button type="button" id="twoPlayer">Two player</button>
+            </form>
+        </div>
+        <div id="markerOption">
+            <form>
+                <button type="button" id="crosses" onclick="gameBoard.playerRotation(Player('crosses').gamePiece(), Player('noughts').gamePiece())">Crosses</button>
+                <button type="button" id="noughts" onclick="gameBoard.playerRotation(Player('noughts').gamePiece(), Player('crosses').gamePiece())" >Noughts</button>
+            </form>
+        </div>
         <div id="container" class="crosses">
             <div id="hub">
                 <h1>Tic-Tac-Toe</h1>
                 <div id="scores">
                     <div id="player1" class="players highlighter">
                         <h3>Player 1</h3>
-                        <p>1</p>
+                        <p id="player1Scores">0</p>
                     </div>
                     <div id="player2" class="players">
                         <h3>Player 2</h3>
-                        <p>3</p>
+                        <p id="player2Scores">0</p>
                     </div>
-                </div>
-                <div id="buttons">
-                    <button class="hubButton">New game</button>
-                    <button class="hubButton">Clear board</button>
-                    <button class="hubButton">Reset scores</button>
                 </div>
             </div>
             <div id="gameboard">
-                <div id="border">
-                    <img id="topLeft" src="" class="marker empty">
-                    <img id="topMiddle" src="" class="marker empty">
-                    <img id="topRight" src="" class="marker empty">
-                    <img id="left" src="" class="marker empty">
-                    <img id="middle" src="" class="marker empty">
-                    <img id="right" src="" class="marker empty">
-                    <img id="botLeft" src="" class="marker empty">
-                    <img id="botMiddle" src="" class="marker empty">
-                    <img id="botRight" src="" class="marker empty">
+                <div id="gameContainer">
+                    <hr id="firstVertical">
+                    <hr id="secondVertical">
+                    <hr id="firstHorizontal">
+                    <hr id="secondHorizontal">
+                    <div id="topLeftCon" class="pieceCon"></div>
+                    <div id="topMiddleCon" class="pieceCon"></div>
+                    <div id="topRightCon" class="pieceCon"></div>
+                    <div id="leftCon" class="pieceCon"></div>
+                    <div id="middleCon" class="pieceCon"></div>
+                    <div id="rightCon" class="pieceCon"></div>
+                    <div id="botLeftCon" class="pieceCon"></div>
+                    <div id="botMiddleCon" class="pieceCon"></div>
+                    <div id="botRightCon" class="pieceCon"></div>
                 </div>
+            </div>
+            <div id="newBoard">
             </div>
         </div>
     </body>
