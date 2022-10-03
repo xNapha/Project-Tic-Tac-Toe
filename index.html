@@ -9,10 +9,10 @@
         <script src="game.js" defer></script>
     </head>
     <body>
-        <div id="playerCount">
+        <div id="playerCount" >
             <form>
-                <button type="button" id="singlePlayer">Single player</button>
-                <button type="button" id="twoPlayer">Two player</button>
+                <button type="button" id="singlePlayer" class="hidden">Single player</button>
+                <button type="button" id="twoPlayer" class="hidden">Two player</button>
             </form>
         </div>
         <div id="markerOption">
@@ -21,11 +21,11 @@
                 <button type="button" id="noughts" onclick="gameBoard.playerRotation(Player('noughts').gamePiece(), Player('crosses').gamePiece())" >Noughts</button>
             </form>
         </div>
-        <div id="container" class="crosses">
+        <div id="container">
             <div id="hub">
                 <h1>Tic-Tac-Toe</h1>
                 <div id="scores">
-                    <div id="player1" class="players highlighter">
+                    <div id="player1" class="players">
                         <h3>Player 1</h3>
                         <p id="player1Scores">0</p>
                     </div>

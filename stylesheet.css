@@ -91,17 +91,16 @@ time, mark, audio, video {
     filter: brightness(0%);
     cursor: pointer;
 }
-.highlighter{
-    background-color: rgba(255,255,255,1);
-    border-radius: 7px;
-
-}
 .crosses{
     background: linear-gradient(135deg,#242F9B, #646FD4, #9BA3EB,#DBDFFD);
 }
 .circles{
     background: linear-gradient(215deg,#F76E11, #FF9F45, #FFBC80);
 }
+.hidden{
+    display: none;
+}
+
 hr{
     display: block;
     position: absolute;
