@@ -132,7 +132,37 @@ hr{
     z-index: 0;
 }
 #markerOption{
-    display: block;
+    display: grid;
     position: absolute;
     z-index: 1;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+#markerOption > h1{
+    font-size: 4rem;
+    text-align: center;
+    position: relative;
+    top: -5rem;
+}
+.backgroundOpacity{
+    background-color: rgba(0,0,0,0.5);
+   
+}
+.blur{
+    filter: blur(10px);
+}
+.markerButtonCon{
+    display: flex;
+    height: 100%;
+    width: 100%;
+   gap: 5rem;
+}
+.markerButtonCon > img{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 20px;
+    filter:brightness(0%);
+    cursor: pointer;
 }

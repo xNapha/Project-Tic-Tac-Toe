@@ -152,8 +152,54 @@ const gameBoard = (() =>{
     return {playerRotation}
 })();
 
+const displayController = (() =>{
+    
+    const markerOption = () => {
+        const markerDiv = document.querySelector("#markerOption");
+
+        const header = document.createElement("h1");
+        header.textContent = "Select your piece"
+
+        const container = document.querySelector("#container")
+        container.setAttribute("class", "blur");
+
+        const form = document.createElement("form");
+        form.setAttribute("class", "markerButtonCon");
+
+        const crossesButton = document.createElement("img");
+        crossesButton.setAttribute("id", "crosses");
+        crossesButton.setAttribute("src", "./assets/crosses.png")
+        crossesButton.addEventListener("click", ()=>{
+            gameBoard.playerRotation(Player('crosses').gamePiece(), Player('noughts').gamePiece());
+            markerDiv.remove()
+            container.removeAttribute("class", "blur");
+        });
+
+        const noughtsButton = document.createElement("img");
+        noughtsButton.setAttribute("id", "noughts");
+        noughtsButton.setAttribute("src", "./assets/noughts.png")
+        noughtsButton.addEventListener("click", ()=>{
+            gameBoard.playerRotation(Player('noughts').gamePiece(), Player('crosses').gamePiece())
+            markerDiv.remove()
+            container.removeAttribute("class", "blur");
+        });
+
+        markerDiv.append(header)
+
+        form.append(crossesButton);
+        form.append(noughtsButton);
+
+        markerDiv.append(form);
+        return;
+    }
+
+    return {markerOption};
+})();
+
 const Player = (marker) =>{
     const gamePiece = () => marker;
 
     return {gamePiece};
 };
+
+displayController.markerOption()
